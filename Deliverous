@@ -1,0 +1,6 @@
+java:
+  image: maugern/jersey-skeleton
+  ports:
+  - ip: 178.33.45.178
+    container_port: 8080
+    host_port: 80

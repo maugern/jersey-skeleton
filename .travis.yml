@@ -1,0 +1,5 @@
+language: java
+jdk: openjdk7
+install: mvn install -Dmaven.compiler.target=3.1 -Dmaven.compiler.source=3.1 -DskipTests=false
+script:
+    - mvn compile -Dmaven.compiler.target=3.1 -Dmaven.compiler.source=3.1
