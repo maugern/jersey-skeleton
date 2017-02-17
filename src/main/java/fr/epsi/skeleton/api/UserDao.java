@@ -9,14 +9,14 @@ import fr.epsi.skeleton.api.User;
 import java.util.List;
 
 public interface UserDao {
-	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(30), alias VARCHAR(30) UNIQUE, email VARCHAR(256) UNIQUE, passwdHash VARCHAR(512), salt VARCHAR(512))")
+	@SqlUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(30), alias VARCHAR(30) UNIQUE, email VARCHAR(256) UNIQUE, passwdHash VARCHAR(512))")
 	void createUserTable();
 
-	@SqlUpdate("INSERT INTO users (name,alias,email, passwdHash, salt) VALUES (:name, :alias, :email, :passwdHash, :salt)")
+	@SqlUpdate("INSERT INTO users (name,alias,email, passwdHash) VALUES (:name, :alias, :email, :passwdHash)")
 	@GetGeneratedKeys
 	int insert(@BindBean() User user);
 
-	@SqlUpdate("UPDATE users SET name = :name, alias = :alias, email = :email, passwdHash = :passwdHash, salt = :salt WHERE id = :id")
+	@SqlUpdate("UPDATE users SET name = :name, alias = :alias, email = :email, passwdHash = :passwdHash WHERE id = :id")
 	int update(@BindBean() User user);
 
 	@SqlQuery("SELECT * FROM users WHERE id = :id")

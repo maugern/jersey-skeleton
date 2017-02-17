@@ -33,6 +33,11 @@ public class UserResource {
 		return user;
 	}
 
+	/**
+	 * Load User from the login.
+	 * @param alias
+	 * @return User who match with the alias
+	 */
 	@GET @Path("/{alias}")
 	public User getUser(@PathParam("alias") String alias) {
 		User user = dao.findByAlias(alias);
@@ -42,26 +47,6 @@ public class UserResource {
 		return user;
 	}
 
-	/**
-     * Load User from the login.
-     * @param Login can be alias or email.
-     * @return User who match with the login, anonymous user if not found.
-     */
-	/*
-	@GET
-	@Path("/{alias}")
-    public User getUserFromLogin(String login) {
-        UserDao dao = BDDFactory.getDbi().open(UserDao.class);
-        User user;
-        if ((user = dao.findByAlias(login)) != null)
-        	return user;
-        else if ((user = dao.findByEmail(login)) != null)
-            return user;
-        else
-        	return User.getAnonymousUser();
-    }
-    */
-	
 	@GET
 	public List<User> getAllUsers() {
 		return dao.all();

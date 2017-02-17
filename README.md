@@ -9,6 +9,12 @@ Clone the repository into your workspace
 git clone https://github.com/maugern/jersey-skeleton.git
 ```
 
+Install with maven
+```sh
+mvn install
+mvn complie
+```
+
 Launch application in localhost:8080
 ```sh
 mvn jetty:run
