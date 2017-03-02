@@ -14,7 +14,7 @@
 					<div style="display: none" id="login-alert"
 						class="alert alert-danger col-sm-12"></div>
 
-					<form id="loginform" class="form-horizontal" role="form">
+					<form action="signin" method="post" id="loginform" class="form-horizontal" role="form">
 
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i
@@ -33,7 +33,7 @@
 						<div style="margin-top: 10px" class="form-group">
 							<!-- Sign in button -->
 							<div class="col-md-offset-3 col-md-7">
-								<button id="btn-signup" type="button"
+								<button id="btn-signup" type="submit"
 									class="btn btn-info center-block">
 									<i class="icon-hand-right"></i> Sign in
 								</button>

@@ -14,7 +14,7 @@
 				<div style="padding-top: 30px" class="panel-body">
 					<div style="display: none" id="login-alert"
 						class="alert alert-danger col-sm-12"></div>
-					<form id="signupform" class="form-horizontal" role="form">
+					<form id="signupform"  action="register" method="post" class="form-horizontal" role="form">
 						
 						<div id="signupalert" style="display: none;"
 							class="alert alert-danger">
@@ -27,7 +27,7 @@
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span> <input type="text"
-									class="form-control" name="alias" placeholder="Username">
+									class="form-control" name="username" placeholder="Username">
 							</div>
 							</div>
 						</div>
@@ -55,7 +55,7 @@
 						<div class="form-group">
 							<!-- Button -->
 							<div class="col-md-offset-3 col-md-7">
-								<button id="btn-signup" type="button"
+								<button id="btn-signup" type="submit"
 									class="btn btn-info center-block">
 									<i class="icon-hand-right"></i> Register
 								</button>

@@ -11,6 +11,6 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger name="fr.epsi.skeleton" level="trace" additivity="false" />
+    <logger name="fr.maugern.skeleton" level="trace" additivity="false" />
 
 </configuration>

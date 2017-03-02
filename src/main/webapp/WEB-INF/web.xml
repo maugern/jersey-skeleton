@@ -15,25 +15,25 @@
 		<servlet-name>index</servlet-name>
 		<jsp-file>/index.jsp</jsp-file>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>index</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
         <servlet-name>signin</servlet-name>
-        <jsp-file>/fr/epsi/skeleton/auth/signin.jsp</jsp-file>
+        <jsp-file>/fr/maugern/skeleton/auth/signin.jsp</jsp-file>
     </servlet>
 
 	<servlet-mapping>
         <servlet-name>signin</servlet-name>
         <url-pattern>/signin</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>register</servlet-name>
-        <jsp-file>/fr/epsi/skeleton/auth/register.jsp</jsp-file>
+        <jsp-file>/fr/maugern/skeleton/auth/register.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
