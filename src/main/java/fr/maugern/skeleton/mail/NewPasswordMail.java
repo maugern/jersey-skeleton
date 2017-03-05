@@ -15,10 +15,10 @@ public class NewPasswordMail implements Mail {
 	private static UserDao dao = BDDFactory.getDbi().open(UserDao.class);
 	private String subject = "Jersey skeleton - Reseting passworld";
 	
-	public NewPasswordMail(String recipient_name, String recipient_email) {
+	public NewPasswordMail(String recipientName, String recipient_email) {
 		email.setSubject(subject);
 		String generatePassword = randomString(12);
-		email.setText("Hello " + recipient_name + ", this is your new temporary password :" + generatePassword);
+		email.setText("Hello " + recipientName + ", this is your new temporary password :" + generatePassword);
 		User recipient = dao.findByEmail(recipient_email);
 		recipient.setPassword(generatePassword);
 		dao.update(recipient);

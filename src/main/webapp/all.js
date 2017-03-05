@@ -32,7 +32,7 @@ function getSecure(url) {
 			error : function(jqXHR, textStatus, errorThrown) {
 				alert('error: ' + textStatus);
 			}
-		});
+		})
 	} else {
 		$.getJSON(url, function(data) {
 			afficheUser(data);
@@ -44,7 +44,7 @@ function postUserBdd(name, alias, pwd) {
 	postUserGeneric(name, alias, pwd, "user/");
 }
 
-function createUser(alias, name, alias, pwd, url) {
+function createUser(name, alias, pwd, url) {
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
@@ -55,10 +55,10 @@ function createUser(alias, name, alias, pwd, url) {
 			"alias" : alias,
 			"password" : pwd,
 		}),
-		success : function(data, textStatus, jqXHR) {
+		success : function(data, textStatus) {
 			afficheUser(data);
 		},
-		error : function(jqXHR, textStatus, errorThrown) {
+		error : function(textStatus) {
 			alert('postUser error: ' + textStatus);
 		}
 	});

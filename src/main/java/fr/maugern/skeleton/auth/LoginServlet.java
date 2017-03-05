@@ -2,6 +2,7 @@ package fr.maugern.skeleton.auth;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,15 +23,18 @@ import fr.maugern.skeleton.api.UserDao;
 
 @Controller
 @WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet implements Serializable{
 	
-	private UserDao dao = BDDFactory.getDbi().open(UserDao.class);
+	private static final long serialVersionUID = -2777055764423755263L;
+	
+	private static UserDao dao = BDDFactory.getDbi().open(UserDao.class);
 	
 	@RequestMapping(value="login", method = RequestMethod.GET)
 	public String login(){
 		return "redirect:signin.jsp";
 	}
 	
+	@Override
 	@RequestMapping(value="/signin", method = RequestMethod.POST)
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

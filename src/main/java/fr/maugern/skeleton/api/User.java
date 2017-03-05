@@ -35,7 +35,7 @@ public class User implements Principal {
 		this.name = name;
 		this.email = email;
 		setPassword(password);
-	};
+	}
 
 	public int getId() {
 		return id;

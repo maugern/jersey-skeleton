@@ -16,7 +16,7 @@ public class BasicAuth {
 		byte[] decodedBytes = DatatypeConverter.parseBase64Binary(extractBase64(auth));
 
 		if (decodedBytes == null || decodedBytes.length == 0) {
-			return null;
+			return new String[0]; // SonarQube recommend empty array instead of null
 		}
 
 		return new String(decodedBytes).split(":", 2);

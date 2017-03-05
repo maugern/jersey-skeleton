@@ -9,10 +9,9 @@ Clone the repository into your workspace
 git clone https://github.com/maugern/jersey-skeleton.git
 ```
 
-Install with maven
+Download dependancy and run unit test
 ```sh
-mvn install
-mvn complie
+mvn verify
 ```
 
 Launch application in localhost:8080
@@ -20,9 +19,9 @@ Launch application in localhost:8080
 mvn jetty:run
 ```
 
-Or you can run it via Docker :
+Or you can pull and run it via Docker :
 ```sh
-docker build --tag jersey-skeleton
+docker pull maugern/jersey-skeleton
 docker run jersey-skeleton
 ```
 

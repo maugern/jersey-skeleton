@@ -13,12 +13,12 @@ public class ConfirmationMail implements Mail {
 	private static UserDao dao = BDDFactory.getDbi().open(UserDao.class);
 	private String subject = "Jersey Skeleton - Confirmation Mail";
 	
-	public ConfirmationMail(String recipient_name, String recipient_email) {
-		email.setFromAddress(sender_name, sender_email);
-        email.addRecipient(recipient_name, recipient_email, null);
+	public ConfirmationMail(String recipientName, String recipientEmail) {
+		email.setFromAddress(senderName, senderEmail);
+        email.addRecipient(recipientName, recipientEmail, null);
 		email.setSubject(subject);
 		
-		User user = dao.findByEmail(recipient_email);
+		User user = dao.findByEmail(recipientEmail);
 		email.setText("Your account " + user.getAlias() + " has been created.");
 	}
 
