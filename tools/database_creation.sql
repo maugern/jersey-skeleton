@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS users (
   name VARCHAR(30),
   alias VARCHAR(30) UNIQUE,
   email VARCHAR(256) UNIQUE,
-  passwdHash VARCHAR(512),
+  passwdHash VARCHAR(512)
 );
