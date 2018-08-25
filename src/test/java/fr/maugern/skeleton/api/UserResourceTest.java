@@ -5,20 +5,16 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import fr.maugern.skeleton.api.Api;
-import fr.maugern.skeleton.api.User;
-
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class UserResourceTest extends JerseyTest {
-    public static final String PATH = "/user";
+    private static final String PATH = "/user";
     private Helper h = new Helper();
 
     @Override

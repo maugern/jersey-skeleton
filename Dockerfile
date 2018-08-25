@@ -4,25 +4,25 @@
 
 # DEFINE IMAGE =================================================
 FROM debian:jessie
-MAINTAINER Nicolas Mauger <https://github.com/maugern/>
+MAINTAINER Nicolas Mauger <nicolas@mauger.cafe>
 
 # BEFORE INSTALL ===============================================
 # Sets language to UTF8 : this works in pretty much all cases
 ENV LANG en_US.UTF-8
 
-# INSTALL JAVA 7 & MAVEN & SQLITE ==============================
+# INSTALL JAVA 8 & MAVEN & SQLITE ==============================
 RUN apt-get update && \
     apt-get install --fix-missing -y \
-            openjdk-7-jdk \
+            openjdk-8-jdk \
             maven \
             sqlite3
 
 # CONFIGURE JAVA ===============================================
-ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 ENV PATH $PATH:$JAVA_HOME/bin
 ENV CLASSPATH $JAVA_HOME/lib/tools.jar
 
-# CONFIGURE MAVEN ====================================
+# CONFIGURE MAVEN ==============================================
 ADD pom.xml /srv/jersey-skeleton/
 WORKDIR /srv/jersey-skeleton/
 RUN mvn install
@@ -36,8 +36,7 @@ RUN sqlite3 /tmp/data.db < /srv/jersey-skeleton/tools/database_creation.sql
 # Add database epuration scipt and run it via cron
 ADD tools/crontab /etc/cron.d/database-cron
 RUN chmod 0644 /etc/cron.d/database-cron
-RUN touch /var/log/cron.log
-CMD cron && tail -f /var/log/cron.log
+CMD cron && tail -f /var/log/cron.lo
 
 # WEB SERVICE CONFIGURATION ====================================
 # Precise the source folder

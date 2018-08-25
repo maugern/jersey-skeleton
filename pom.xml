@@ -15,7 +15,7 @@
 		<developer>
 			<id>maugern</id>
 			<name>Nicolas Mauger</name>
-			<email>contact@maugern.fr</email>
+			<email>nicolas@mauger.cafe</email>
 		</developer>
 	</developers>
 
@@ -54,7 +54,7 @@
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.3.0.M2</version>
+				<version>9.4.12.RC2</version>
 				<configuration>
 					<scanIntervalSeconds>5</scanIntervalSeconds>
 					<war>${project.basedir}/target/${project.artifactId}.war</war>
@@ -68,12 +68,16 @@
 	</build>
 
 	<dependencies>
+
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Webstuff -->
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
@@ -95,6 +99,7 @@
 			<version>${jersey.version}</version>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- Spring, for easy MVC implementation -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -122,6 +127,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+
 		<!-- Jstl for tablib "java core jsp/jstl in web.xml -->
 		<dependency>
 			<groupId>jstl</groupId>
@@ -133,12 +139,14 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+
 		<!-- Awesome logs-->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.1.2</version>
 		</dependency>
+
 		<!-- DB connection -->
 		<dependency>
 			<groupId>org.jdbi</groupId>
@@ -152,18 +160,12 @@
 		</dependency>
 
 		<!-- Bcrypt, a blowfish hashing code, designed to raise the cost of off-line 
-			brute force or raindow attaque (aka JohnTheRipper). More information : https://en.wikipedia.org/wiki/Bcrypt -->
+			brute force or rainbow attaque (aka JohnTheRipper). More information : https://en.wikipedia.org/wiki/Bcrypt -->
 		<dependency>
 			<groupId>org.mindrot</groupId>
 			<artifactId>jbcrypt</artifactId>
 			<version>0.3m</version>
 		</dependency>
 
-		<!-- Simple java Mail : http://www.simplejavamail.org -->
-		<dependency>
-			<groupId>org.simplejavamail</groupId>
-			<artifactId>simple-java-mail</artifactId>
-			<version>4.1.1</version>
-		</dependency>
 	</dependencies>
 </project>

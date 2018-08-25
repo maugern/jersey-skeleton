@@ -1,25 +1,19 @@
 package fr.maugern.skeleton.auth;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Serializable;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import fr.maugern.skeleton.api.BDDFactory;
+import fr.maugern.skeleton.api.User;
+import fr.maugern.skeleton.api.UserDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import fr.maugern.skeleton.api.BDDFactory;
-import fr.maugern.skeleton.api.User;
-import fr.maugern.skeleton.api.UserDao;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Serializable;
 
 @Controller
 @WebServlet("/LoginServlet")
@@ -47,7 +41,7 @@ public class LoginServlet extends HttpServlet implements Serializable{
 		if(user.isGoodPassword(password)){
 			HttpSession session = request.getSession();
 			session.setAttribute("username", alias);
-			Cookie loginCookie = new Cookie("user",user.toString()); // TODO maybe a dot very good cookie
+            Cookie loginCookie = new Cookie("user", user.toString()); // TODO maybe a not very good cookie
 			//setting cookie to expiry in 30 mins
 			loginCookie.setMaxAge(30*60);
 			response.addCookie(loginCookie);

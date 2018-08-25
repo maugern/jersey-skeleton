@@ -1,6 +1,6 @@
-Jersey Skeleton
+Jersey Skeleton [![][travis img]][travis] [![][code-climate img]][code-climate]
 ===============
-[![][travis img]][travis]  [![][circle img]][circle]  [![][code-climate img]][code-climate]  [![][requires img]][requires]
+
 
 To launch local webserver
 -------------------------
@@ -30,7 +30,7 @@ About this
 This project fork the original [jersey-skeleton].
 I offer no warranty on anything, ever. If you add a new feature or fix a bug,
  it would be nice if you contributed it back to the project.
-Don't worry, it's under [![][license img]][license]
+Don't worry, it's under [![][license img]][license].
 
 
 
@@ -40,14 +40,8 @@ Don't worry, it's under [![][license img]][license]
 [travis]:https://travis-ci.org/maugern/jersey-skeleton
 [travis img]:https://travis-ci.org/maugern/jersey-skeleton.svg?branch=master
 
-[circle]:https://circleci.com/gh/maugern/jersey-skeleton
-[circle img]:https://circleci.com/gh/maugern/jersey-skeleton.svg?style=svg
-
 [code-climate]:https://codeclimate.com/github/maugern/jersey-skeleton
 [code-climate img]:https://codeclimate.com/github/maugern/jersey-skeleton/badges/gpa.svg
-
-[requires]:https://requires.io/github/maugern/jersey-skeleton/requirements/?branch=master
-[requires img]:https://requires.io/github/maugern/jersey-skeleton/requirements.svg?branch=master
 
 [license]:https://github.com/maugern/jersey-skeleton/blob/master/LICENSE
 [license img]:https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
